@@ -11,7 +11,7 @@ public class Citycontroller {
         return "/City_List/Seoul";
     }
 
-    @PostMapping("/citys/Seoul")
+    @GetMapping("/citys/Seoul")
     public String List(){
         return "/City_List/Seoul";
     }
