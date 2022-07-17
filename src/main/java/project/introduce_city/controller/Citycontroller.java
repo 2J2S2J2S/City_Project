@@ -13,14 +13,6 @@ public class Citycontroller {
     @Autowired
     private Korea_CIty_List korea_cIty_list;
 
-
-
-    @GetMapping("/citys/list")
-    public String cityList(){
-
-        return "City_List/Seoul";
-    }
-
     @GetMapping("/citys/Seoul")
     public String seoul_List(Model model){
         model.addAttribute("korea",korea_cIty_list.list1());

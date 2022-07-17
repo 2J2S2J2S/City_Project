@@ -6,6 +6,7 @@
         <table>
             <thead>
             <tr>
+                <th>#</th>
                 <th>도시명</th>
                 <th>랜드마크</th>
             </tr>
@@ -14,6 +15,7 @@
             <tr th:each="city : ${korea}">
                 <td th:text="${city.Id}"></td>
                 <td th:text="${city.cityname}"></td>
+                <td th:text="${city.citylocal}"></td>
             </tr>
             </tbody>
         </table>

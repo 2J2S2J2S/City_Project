@@ -8,15 +8,16 @@ import javax.persistence.Id;
 @Entity
 public class City {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String Id;
+    private int Id;
     private String cityname;
+    private String citylocal;
 
-    public String getId() {
+    public int getId() {
         return Id;
     }
 
-    public void setId(String id) {
-        this.Id = id;
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getCityname() {
@@ -25,5 +26,13 @@ public class City {
 
     public void setCityname(String cityname) {
         this.cityname = cityname;
+    }
+
+    public String getCitylocal() {
+        return citylocal;
+    }
+
+    public void setCitylocal(String citylocal) {
+        this.citylocal = citylocal;
     }
 }
