@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="layout">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>도시명</th>
+                <th>랜드마크</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="city : ${korea}">
+                <td th:text="${city.Id}"></td>
+                <td th:text="${city.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
