@@ -1,15 +1,22 @@
 package project.introduce_city.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table
 public class City {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String Id;
-    private String cityname;
+
+    @Column(name = "city_name")
+    private String cityName;
+
+    @Column(name = "city_name_kor")
+    private String cityNameKor;
+
+    public String getCityNameKor() {
+        return cityNameKor;
+    }
 
     public String getId() {
         return Id;
@@ -19,11 +26,11 @@ public class City {
         this.Id = id;
     }
 
-    public String getCityname() {
-        return cityname;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setCityname(String cityname) {
-        this.cityname = cityname;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 }
