@@ -28,7 +28,7 @@ public class CityController {
     @GetMapping("/test")
     public void testMethod(Model model){
         String test = "model test";
-        model.addAttribute("value", test);
+        model.addAttribute("seoul", test);
     }
 
 }
