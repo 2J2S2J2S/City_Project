@@ -24,7 +24,7 @@ public class CityController {
         return "City_List/Seoul_LandMark";
     }
 
-    // test controller 추가
+    // ++ test controller
     @GetMapping("/test")
     public void testMethod(Model model){
         String test = "model test";
