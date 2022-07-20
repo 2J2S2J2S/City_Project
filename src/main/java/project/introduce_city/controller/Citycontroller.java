@@ -13,11 +13,8 @@ public class Citycontroller {
     @Autowired
     private Korea_CIty_List korea_cIty_list;
 
-
-
     @GetMapping("/citys/list")
     public String cityList(){
-
         return "City_List/Seoul";
     }
 
@@ -25,5 +22,12 @@ public class Citycontroller {
     public String seoul_List(Model model){
         model.addAttribute("korea",korea_cIty_list.list1());
                 return "City_List/Seoul_LandMark";
+    }
+
+    @GetMapping("/test")
+    public String testMethod(Model model){
+        String test="테스트입니다.";
+        model.addAttribute("korea",korea_cIty_list.list1());
+        return "City_List/Seoul_LandMark";
     }
 }
