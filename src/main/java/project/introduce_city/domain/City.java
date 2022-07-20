@@ -1,11 +1,13 @@
 package project.introduce_city.domain;
 
-import javax.persistence.*;
+import jdk.jfr.DataAmount;
 
+import javax.persistence.*;
 @Entity
-@Table
+@Table(name = "city")
 public class City {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Id")
     private String Id;
 
     @Column(name = "city_name")
