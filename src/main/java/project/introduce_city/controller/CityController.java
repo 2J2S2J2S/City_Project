@@ -12,16 +12,15 @@ public class CityController {
     @Autowired
     private Korea_CIty_List korea_cIty_list;
 
-
-    @GetMapping("/citys/list")
-    public String cityList() {
-
-        return "City_List/Seoul";
+    @GetMapping("/citys/Seoul")
+    public String Seoul(Model model) {
+        model.addAttribute("korea",  korea_cIty_list.Seoul_list());
+        return "City_List/Seoul_LandMark";
     }
 
-    @GetMapping("/citys/Seoul")
-    public String seoul_List(@Validated Model model) {
-        model.addAttribute("korea",  korea_cIty_list.list1());
+    @GetMapping("/citys/Gyeonggido")
+    public String Gyeonggido(Model model){
+        model.addAttribute("korea",korea_cIty_list.Gyeonggido_List());
         return "City_List/Seoul_LandMark";
     }
 

@@ -10,5 +10,7 @@ import java.util.Optional;
 public interface Seoul {
     List<City> findAll();
 
-    List<City> findByName();
+    List<City> findBySeoul();
+
+    List<City> findByGyeonggido();
 }

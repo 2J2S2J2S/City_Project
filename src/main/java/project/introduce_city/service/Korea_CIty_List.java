@@ -21,7 +21,11 @@ public class Korea_CIty_List {
     /*@Autowired
     private Seoul seoul;*/
 
-    public List<City> list1(){
-        return cityRepository.findByName();
+    public List<City> Seoul_list(){
+        return cityRepository.findBySeoul();
+    }
+
+    public List<City> Gyeonggido_List(){
+        return cityRepository.findByGyeonggido();
     }
 }

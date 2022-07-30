@@ -20,9 +20,15 @@ public class CityRepository implements Seoul{
     }
 
     @Override
-    public List<City> findByName() {
+    public List<City> findBySeoul() {
        return em.createQuery("select m from City m where m.city_name=:name",City.class).setParameter("name","서울")
                .getResultList();
     }
-}
+
+    @Override
+    public List<City> findByGyeonggido(){
+        return em.createQuery("select m from City m where m.city_name=:name",City.class).setParameter("name","경기도")
+                .getResultList();
+    }
+    }
 
