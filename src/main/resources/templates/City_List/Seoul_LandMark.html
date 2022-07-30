@@ -12,8 +12,9 @@
             </thead>
             <tbody>
             <tr th:each="city : ${korea}">
-                <td th:text="${city.Id}"></td>
-                <td th:text="${city.cityname}"></td>
+                <td th:value="${city.Id}"></td>
+                <td th:text="${city.city_name}"></td>
+                <td th:text="${city.city_name_kor}"></td>
             </tr>
             </tbody>
         </table>
