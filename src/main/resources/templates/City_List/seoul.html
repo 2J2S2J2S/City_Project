@@ -1,20 +1,25 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+</head>
 <body>
 <div class="layout">
     <div>
         <table>
             <thead>
             <tr>
+                <th>고유번호</th>
                 <th>도시명</th>
                 <th>랜드마크</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="city : ${korea}">
-                <td th:value="${city.Id}"></td>
-                <td th:text="${city.city_name}"></td>
-                <td th:text="${city.city_name_kor}"></td>
+                <td th:text="${city.Id}"></td>
+                <td th:text="${city.cityName}"></td>
+                <td th:text="${city.korName}"></td>
             </tr>
             </tbody>
         </table>

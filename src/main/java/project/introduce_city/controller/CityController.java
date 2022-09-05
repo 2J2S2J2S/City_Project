@@ -1,34 +1,23 @@
 package project.introduce_city.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import project.introduce_city.service.Korea_CIty_List;
+import org.springframework.web.bind.annotation.PathVariable;
+import project.introduce_city.domain.City;
+import project.introduce_city.service.CityService;
 
 @Controller
 public class CityController {
-    @Autowired
-    private Korea_CIty_List korea_cIty_list;
+    private final CityService cityService;
 
-    @GetMapping("/citys/Seoul")
-    public String Seoul(Model model) {
-        model.addAttribute("korea",  korea_cIty_list.Seoul_list());
-        return "City_List/Seoul_LandMark";
+    public CityController(CityService cityService) {
+        this.cityService = cityService;
     }
 
-    @GetMapping("/citys/Gyeonggido")
-    public String Gyeonggido(Model model){
-        model.addAttribute("korea",korea_cIty_list.Gyeonggido_List());
-        return "City_List/Seoul_LandMark";
+    @GetMapping("/city/{cityName}")
+    public String getCityByName(@PathVariable String cityName){
+        City city = cityService.getCityByName(cityName)
+                .orElseThrow(IllegalAccessError::new);
+        return city.toString();
     }
-
-    // ++ test controller
-    @GetMapping("/test")
-    public void testMethod(Model model){
-        String test = "model test";
-        model.addAttribute("seoul", test);
-    }
-
 }

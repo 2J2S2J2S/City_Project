@@ -1,16 +1,9 @@
 package project.introduce_city.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import project.introduce_city.domain.City;
-
-import java.util.List;
-import java.util.Optional;
-
 @Repository
-public interface Seoul {
-    List<City> findAll();
+public interface Seoul extends JpaRepository<City,String> {
 
-    List<City> findBySeoul();
-
-    List<City> findByGyeonggido();
 }
