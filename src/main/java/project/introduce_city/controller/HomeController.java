@@ -25,8 +25,8 @@ public class HomeController {
         return mav;
     }
 
-    @GetMapping("go")
+    /*@GetMapping("go")
     public String dd(){
-        return "pra";
-    }
+        return "pra";*/
+
 }

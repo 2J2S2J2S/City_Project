@@ -11,3 +11,4 @@ public class KoreaRandmarkApp {
         SpringApplication.run(KoreaRandmarkApp.class, args);
     }
 }
+
