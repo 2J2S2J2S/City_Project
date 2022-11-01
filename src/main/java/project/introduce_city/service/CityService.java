@@ -27,4 +27,6 @@ public class CityService {
     public List<City> getCityList(){
         return cityRepository.findAll();
     }
+
+    public Optional<City> getCityOByKorName(String name){ return cityRepository.findCityByKorName(name);}
 }
