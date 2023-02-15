@@ -14,14 +14,15 @@ import java.util.Optional;
 public class HomeController {
     private final CityService cityService;
 
-
     public HomeController(CityService cityService) {
         this.cityService = cityService;
-
     }
 
+    private  String str;
+
+
     @GetMapping("/")
-    public ModelAndView getHome(){
+    public ModelAndView getHome()   {
         List<City> cities =  cityService.getCityList();
         ModelAndView mav = new ModelAndView();
         mav.setViewName("home");
@@ -39,10 +40,10 @@ public class HomeController {
         return "seoul_food";
     }
 
-    @GetMapping("{cityName}")
+    /*@GetMapping("{cityName}")
     public String sss(@PathVariable String cityName){
         City city=cityService.getCityByName(cityName)
                 .orElseThrow(IllegalAccessError::new);
         return "cityName";
-    }
+    }*/
 }
